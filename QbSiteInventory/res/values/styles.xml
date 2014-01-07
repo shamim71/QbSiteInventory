@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+		=============================
+    		ACTION BAR, BOTTOM BAR & APP-WIDE
+    	=============================
+    -->
+
+
+
+
+    <!-- Display title on the action bar -->
+    <style name="ActionBarTitleStyle" parent="WhiteBoldText">
+        <item name="android:textSize">@dimen/title_text</item>
+    </style>
+
+    <style name="MediumLargeTitleStyle" parent="WhiteBoldText">
+        <item name="android:textSize">@dimen/huge_text</item>
+    </style>
+
+    <style name="ActionBarAmountStyle" parent="WhiteBoldText">
+        <item name="android:textSize">@dimen/minimal_text</item>
+    </style>
+
+    <style name="BottomBarDimensions">
+        <item name="android:layout_height">65dp</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="BottomContainerDimensions">
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <style name="Theme.Dialog.Alert" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- item name="android:windowTitleStyle">@android:style/DialogWindowTitle</item -->
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <!--
+		=============================
+			TEXT
+    	=============================
+    -->
+
+
+    <!-- A white font is needed for the title -->
+    <style name="WhiteBoldText">
+        <item name="android:textColor">@color/list_item_selector_white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="HugeWhiteBoldText" parent="WhiteBoldText">
+        <item name="android:textSize">@dimen/title_text</item>
+    </style>
+
+    <style name="SmallWhiteBoldText" parent="WhiteBoldText">
+        <item name="android:textSize">@dimen/medium_text</item>
+    </style>
+
+    <style name="BlackText">
+        <item name="android:textColor">@color/Black</item>
+    </style>
+
+    <style name="MediumGrayText">
+        <item name="android:textColor">@color/list_item_selector_greyshade4</item>
+        <item name="android:textSize">@dimen/medium_text</item>
+        <!-- <item name="android:textAppearance">?android:attr/textAppearanceMedium</item> -->
+    </style>
+
+    <style name="RedText">
+        <item name="android:textSize">@dimen/medium_text</item>
+        <item name="android:textColor">@color/ActionBarRed</item>
+    </style>
+
+    <style name="RedTitle">
+        <item name="android:textSize">@dimen/title_text</item>
+        <item name="android:textColor">@color/ActionBarRed</item>
+    </style>
+
+    <style name="RedName">
+        <item name="android:textSize">@dimen/huge_text</item>
+        <item name="android:textColor">@color/ActionBarRed</item>
+    </style>
+
+    <style name="GreyTextName">
+        <item name="android:textSize">@dimen/huge_text</item>
+        <item name="android:textColor">@color/GreyDesignerDark</item>
+    </style>
+
+    <style name="GreyTextMessage">
+        <item name="android:textSize">@dimen/big_text</item>
+        <item name="android:textColor">@color/GreyDesignerDark</item>
+    </style>
+    <style name="GreyTextMessage2">
+        <item name="android:textSize">@dimen/big_text</item>
+
+    </style>
+    <style name="ItalicGreyText" parent="@style/GreyTextMessage">
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">@color/Grey3</item>
+    </style>
+
+    <style name="BlackTextMessage">
+        <item name="android:textSize">@dimen/big_text</item>
+        <item name="android:textColor">@color/Black</item>
+    </style>
+
+    <style name="GreyTextDescription">
+        <item name="android:textSize">@dimen/small_text</item>
+        <item name="android:textColor">@color/ActionBarTabTextGrey</item>
+    </style>
+
+    <style name="GreyTextQuantity">
+        <item name="android:textSize">@dimen/medium_text</item>
+        <item name="android:textColor">@color/ActionBarTabTextGrey</item>
+    </style>
+
+    <style name="BottomBarPriceText">
+        <item name="android:textSize">@dimen/big_text</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <style name="BottomBarPriceNumber">
+        <item name="android:textSize">@dimen/big_text</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <style name="LargeGrayText">
+        <item name="android:textSize">@dimen/big_text</item>
+        <item name="android:textColor">#606060</item>
+    </style>
+
+    <style name="HugeGrayText">
+        <item name="android:textSize">@dimen/huge_text</item>
+        <item name="android:textColor">@color/list_item_selector_greyshade4</item>
+    </style>
+
+    <style name="GreyShade1" parent="HugeGrayText">
+        <item name="android:textColor">@color/list_item_selector_greyshade1</item>
+    </style>
+
+    <style name="GreyShade2" parent="MediumGrayText">
+        <item name="android:textColor">@color/list_item_selector_greyshade2</item>
+    </style>
+
+    <style name="BlackShade">
+        <item name="android:textSize">@dimen/huge_text</item>
+        <item name="android:textColor">@color/list_item_selector_blackshade</item>
+    </style>
+
+    <!-- For the passcode entry screen -->
+    <style name="SingleCharPasscode">
+        <item name="android:textAppearance">?android:textAppearanceLarge</item>
+        <item name="android:textSize">30.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLength">1</item>
+    </style>
+
+    <!--
+		=============================
+			BUTTONS
+    	=============================
+    -->
+    <!--
+         Default button text style. Don't use this one in your layout, 
+    	use either GenericButtonDark or GenericButtonDefault
+    -->
+    <style name="GenericButtonBase">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="GenericButton" parent="GenericButtonBase">
+        <item name="android:background">@drawable/button_dark</item>
+    </style>
+
+    <style name="GenericButtonTransparent" parent="GenericButtonBase">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="GenericButtonDefault" parent="GenericButton">
+        <item name="android:background">@drawable/button_default</item>
+    </style>
+
+    <style name="OrangeButton" parent="GenericButtonBase">
+        <item name="android:background">@drawable/button_alert</item>
+    </style>
+
+    <!-- Override the commons style -->
+    <style name="GenericButtonCommons" parent="GenericButton" />
+
+    <!-- A darker gray button bar instead of the standard one -->
+    <style name="ZaqZaqButtonBar">
+        <item name="android:paddingTop">8dip</item>
+        <item name="android:paddingLeft">6dip</item>
+        <item name="android:paddingRight">6dip</item>
+        <item name="android:paddingBottom">6dip</item>
+        <item name="android:background">@drawable/button_bar</item>
+    </style>
+
+    <!-- Inline progress indicator -->
+    <style name="GenericProgressIndicator" parent="@android:style/Widget.ProgressBar.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:indeterminate">true</item>
+    </style>
+
+
+    <!--
+		=============================
+			COMMONS OVERRIDES
+    	=============================
+    	These are the styles that have to be overriden in order to customize the Commons library UI :
+    		- CommonsTheme : The main Theme to be used for the Commons lib
+    		- CommonsPaymentActivity : the Activity containing the payment buttons
+    		- CommonsPaymentButton : the root style for Payment buttons
+    		- CommonsPaymentButton.PayPal : Paypal button (e.g : if text/icon should be changed
+    		- CommonsPaymentButton.CreditCard : Credit Card button (e.g : if text/icon should be changed
+    -->
+
+    <style name="CommonsButtonBar" parent="@style/ZaqZaqButtonBar" />
+
+    <style name="CommonsButton" parent="@style/GenericButton">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_weight">0.5</item>
+        <item name="android:disabledAlpha">0.5</item>
+    </style>
+
+    <style name="CommonsButtonHighlighted" parent="@style/GenericButtonDefault">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_weight">0.5</item>
+        <item name="android:disabledAlpha">0.5</item>
+    </style>
+
+    <style name="CommonsPaymentActivity">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="CommonsSingleCharPasscode" parent="BlackText">
+        <item name="android:textAppearance">?android:textAppearanceLarge</item>
+        <item name="android:textSize">30.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLength">2</item>
+    </style>
+
+    <!-- Default Text view style for credit card entry screen -->
+    <style name="CommonsTextView" parent="BlackText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- Default EditText style for CC numbers -->
+    <style name="CommonsCCNumberEditText" parent="BlackText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:digits">"1234567890 "</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">19</item>
+    </style>
+
+    <!-- Defaule Credit card expiry date EditText style -->
+    <style name="CommonsCCExpiryDateEditText" parent="BlackText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:digits">1234567890/</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">5</item>
+    </style>
+
+    <style name="CommonsPinInstructions" parent="BlackText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">50dip</item>
+    </style>
+
+    <style name="CommonsAmount" parent="BlackText">
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@drawable/item_details_background_gray</item>
+    </style>
+
+    <style name="CommonsContentPanel" parent="BlackText">
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@drawable/item_details_background</item>
+    </style>
+
+    <style name="CommonsPinPanel" parent="BlackText">
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@drawable/item_details_background</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!--
+		=============================
+			PROGRESS DIALOGS
+    	=============================
+    -->
+
+
+    <!--
+		=============================
+			LAYOUTS
+    	=============================
+    -->
+    <style name="PaddedSides">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <style name="BottomBarBtnStyle">
+        <item name="android:background">@drawable/button_background_selector</item>
+        <item name="android:layout_width">140dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="BottomBarBtnStyle2">
+
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textSize">16sp</item>
+
+        <item name="android:gravity">center</item>
+    </style>
+    <declare-styleable name="ButtonTypeface">
+        <attr name="typeface" format="string" />
+    </declare-styleable>
+
+
+    <style name="CommonsButtonClear" parent="@style/BottomBarBtnStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+    </style>
+
+    <style name="CommonsButtonPay" parent="@style/BottomBarBtnStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+
+    <!-- Custom progress bar style from common-android -->
+
+    <style name="CustomProgressDialogStyle">
+        <item name="android:background">@color/translucent_background</item>
+    </style>
+
+    <style name="CustomProgressDialogTextStyle" parent="GreyTextDescription"/>
+
+
+
+    <style name="PaymentBottomBarStyle">
+        <item name="android:layout_height">65dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/bottom_bar_background_layers</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="ListViewItemStyle">
+        <item name="android:paddingLeft">@dimen/listview_left_padding</item>
+        <item name="android:paddingRight">@dimen/listview_right_padding</item>
+        <item name="android:paddingTop">@dimen/listview_top_padding</item>
+        <item name="android:paddingBottom">@dimen/listview_bottom_padding</item>
+        <item name="android:background">@drawable/list_background</item>
+    </style>
+
+    <style name="PayPalPlaceHolderStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_marginTop">1dp</item>
+        <item name="android:layout_marginBottom">1dp</item>
+    </style>
+    <style name="PlatformDialogStyle" parent="@android:style/Theme">
+        <item name="android:textSize">15sp</item>
+    </style>
+    
+    
+    <style name="Fungreetings.ProgressBar" parent="@android:style/Widget.ProgressBar.Small">
+        <item name="android:minWidth">@dimen/progress_normal</item>
+        <item name="android:maxWidth">@dimen/progress_normal</item>
+        <item name="android:minHeight">@dimen/progress_normal</item>
+        <item name="android:maxHeight">@dimen/progress_normal</item>
+        <item name="android:indeterminateDuration">1400</item>
+        <item name="android:indeterminateDrawable">@drawable/indeterminate_progressbar</item>
+    </style>
+    
+    <style name="funbox_medium_anthracite_style" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/anthracite</item>
+        <item name="android:textSize">@dimen/tmobile_font_83</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>    
+</resources>

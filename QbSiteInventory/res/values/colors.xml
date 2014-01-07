@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+      For shades of grey see:
+        http://www.w3schools.com/html/html_colors.asp
+      Please use numbers in names to indicate the shade 
+    -->
+    <color name="Grey1">#D0D0D0</color>
+    <color name="Grey2">#B0B0B0</color>
+    <color name="Grey3">#909090</color>
+    <color name="Grey4">#606060</color>
+    <color name="GreyDisabled">#A3A3A3</color>
+    <color name="White">#FFFFFF</color>
+    <color name="Black">#000000</color>
+    <color name="BackgroundColor">@color/Grey1</color>
+    <color name="Green">#33CC38</color>
+    <color name="Red">#D42222</color>
+    <color name="BottomBarGrey">#434343</color>
+    <color name="InfoWindowGrey">#C0434343</color>
+    <color name="ActionBarRed">#FFE51835</color>
+    <color name="ActionBarRedDark">#FFA42133</color>
+    <color name="ActionBarRose">#ECC7D3</color>
+    <color name="ActionBarGrey">#F0F0F0</color>
+    <color name="ActionBarTabTextGrey">#858585</color>
+    <color name="GreyDesignerDark">#636363</color>
+    <color name="ActionBarSeparatorColor">#D0D0D0</color>
+    <color name="Red1">#b3ef8090</color>
+    <color name="Red2">#b3ad182e</color>
+    <color name="WarningLightYellow"> #FFfeffef </color>
+    <color name="transparent">#00000000</color>
+    <color name="black">#323232</color>
+    <color name="translucent_background">#CCA3A3A3</color>
+    <color name="translucent_white">#CCFFFFFF</color>
+    <color name="anthracite">#4B4B4B</color>
+
+</resources>

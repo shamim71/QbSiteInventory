@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Nappkin </string>
+    <string name="incorso_logo">Nappkin  logo</string>
+    <string name="beasy_image">Nappkin image</string>
+    <string name="minus"> - </string>
+    <string name="plus"> + </string>
+    <string name="total_order">Order total: </string>
+    <string name="item_price">Item price: </string>
+    <string name="paypal">PayPal</string>
+    <string name="credit_card">Credit Card</string>
+    <string name="processing">Processing…</string>
+    <string name="shop">Add something else</string>
+    <string name="retry">Retry</string>
+    <string name="get_directions">Get Directions</string>
+    <string name="search">Search</string>
+    <string name="pickup">Pickup</string>
+    <string name="pick_up_question_with_time">Pick up last order?\nReady %s</string>
+    <string name="earliest_pickup_today_at">The earliest possible pickup time for your order is at %1$s (%2$s)</string>
+    <string name="whats_nearby">Nearest restaurant</string>
+    <string name="filter">Filter</string>
+    <string name="apply">Apply</string>
+    <string name="currently_closed">Currently closed</string>
+    <string name="closed">Closed</string>
+    <string name="sort">Sort</string>
+
+    <string name="restaurants_list">Restaurants in %s</string>
+    <string name="restaurants_map">Map of %s</string>
+    <string name="restaurants_list_short">List</string>
+    <string name="restaurants_map_short">Map</string>
+
+    <!-- Credit card fragment strings -->
+    <string name="card_number">Card Number</string>
+    <string name="credit_card_number_hint">1234 5678 9012 3456</string>
+    <string name="credit_card_expiry_date_hint">MM/YY</string>
+    <string name="expires">Expires</string>
+    <string name="cancel">Cancel</string>
+    <string name="pay">Pay</string>
+    <string name="save_cc">Save credit card details</string>
+    <string name="passcode_hint">.</string>
+    <string name="enter_pin">Please enter your PIN</string>
+    <string name="enter_new_pin">Please enter a new PIN</string>
+    <string name="reenter_pin">Please re-enter your new PIN</string>
+    <string name="wrong_pin">The two values did not match, please try again!</string>
+    <!-- For Basket -->
+    <string name="itemIcon">Item Picture</string>
+    <string name="basketSummary">Total price: </string>
+    <string name="basketDefaultQuantity">00</string>
+
+    <!-- TOASTS -->
+    <string name="removed_item">removed %1$s</string>
+    <string name="customize_type">Type of customization</string>
+    <string name="next">Next</string>
+    <string name="finish">Finish</string>
+    <string name="favorites">My Favorites</string>
+    <string name="product_image">Product image</string>
+
+    <!-- Activity default titles -->
+    <string name="restaurant">Restaurant</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="available_menu">Menu</string>
+    <string name="payment_title">Payment</string>
+    <string name="credit_card_payment">Credit card payment</string>
+    <string name="none">None</string>
+
+    <!-- Sliding menu names  -->
+  	<string name="beasy_menu">Nappkin Menu</string> 
+  	<string name="beasy_favorite">My Favourites</string> 
+  	<string name="choose_location">Choose Location</string>
+  	<string name="beasy_order">My Orders</string> 
+  	<string name="about">About</string>
+  	    
+  	<string name="out_of_restaurant">You are not yet entered into the restaurant</string> 
+  	
+    <!-- Checkout fragment -->
+    <string name="checkout">Checkout</string>
+    
+    <!-- Order payment selection -->
+    <string name="order_pickup_time">Nappkin and pick up your order</string>
+    <string name="order_confirmation">Confirmation</string>
+    <string name="order_pickup_now">Go and pick up</string>
+	<string name="order_confirmation_messageTop">Thanks for ordering with Nappkin. You can pick up your food</string>
+	<string name="order_confirmation_messageMiddle">at %1$s in %2$s.</string>
+	<string name="order_confirmation_messageBottom">Enjoy your meal!</string>
+	
+    <!-- Purchase order history -->
+	<string name="reorder">Reorder</string>
+	<string name="restaurant_confirmation">Restaurant Confirmation</string>
+	<string name="restaurant_conf_msg">Your selected order was bought from a different restaurant. Do you want to continue reordering from the former restaurant? </string>
+	<string name="restaurant_conf_yes">Go and reorder</string>
+	<string name="restaurant_conf_no">No</string>
+	
+	<string name="missing_item_confirmation">Warning !</string>
+	<string name="missing_item_conf_msg">Some items from the previous order are not available now; Do you like to continue without having them?</string>
+	<string name="missing_item_conf_yes">Go and checkout</string>
+	<string name="missing_item_conf_no">No</string>
+	<string name="no_article_available">No article available</string>
+	
+    <!-- Purchase order details -->
+    <string name="order_detail_title">Order details</string>
+    <string name="show_qr_code">Show QR-Code</string>
+    <string name="empty_my_purchase_description">There is no order to pick up. After making an order, your purchase will be available here.</string>
+	<string name="pick_up_now">Pick up now</string>
+	
+    <!-- My Favorite strings -->
+    <string name="empty_my_favorite_description">You dont have any favourite item to display. You can add an item to your favorite list while making an order.</string>
+
+    <!-- Article details strings -->
+    <string name="add_to_order">Add to Order</string>
+    <string name="dummy_total">Total: 39,50€</string>
+    
+    <string name="choose_at_least">Choose at least %1$s option(s)!</string>
+    <string name="choose_at_most">Choose at most %1$s option(s)!</string>
+    <string name="loading_menu_for_restaurant">Loading menu for %1$s</string>
+    <string name="loaded_menu_for_restaurant">Loaded menu for %1$s</string>
+    <string name="no_restaurant_available">The selected restaurant is no longer available</string>
+    <string name="and_x_more_items">and %1$s more item(s)</string>
+    <string name="choose_a_location_first">Choose a location first!</string>
+    <string name="qr_instructions">Show this code to the cashier and enjoy your meal.</string>
+    
+    <!-- Required for google maps. Just copy it to all your strings.xml files -->
+    <string name="maps_api_key_debug">0vLbgUoMuYCIHdrlWJCNysTuZzP0xh1HJ5MPrtg</string>
+    
+    <!-- End of B.Easy strings.. these are now the new ones from mobile ordering -->
+    <string name="restaurants_near_me">Restaurants near me</string>
+    <string name="restaurants_near_me_short">Near me</string>
+    <string name="choose_city">Choose city</string>
+    <string name="choose_city_short">Other</string>
+    <string name="gps_disabled">GPS is disabled!</string>
+    <string name="res_filter">Search filters</string>
+    <string name="call_restaurant">Call</string>
+    <string name="enable_gps">Please enable GPS!</string>
+    <string name="empty_restaurants_description">There are no restaurants nearby! Try choosing a city in the home screen.</string>
+    <string name="choose_at_least_one_filter">There are no food categories selected! Choose at least one food category.</string>
+    <string name="locating">Locating...</string>
+    <string name="tap_anywhere">Tap anywhere to close</string>
+    <string name="ready_in_x_minutes">Ready for pickup</string> <!-- Ex: Ready for pickup in -->
+    <string name="no_categories">No categories found!</string>
+    <string name="closing_soon">This Restaurant will close %1$s!</string> <!-- Ex: This restaurant will close in 15 mins! -->
+    <string name="closing_soon_short">closing %1$s</string> <!-- Ex: This restaurant closing in 15 mins! -->
+    <string name="opening_soon">opens %1$s</string> <!-- Ex: Currently closed - opens in 12 hours -->
+    <string name="short_opening_soon">opens %1$s</string> <!-- Ex: opens in 12 hours -->
+    <string name="open_until">open until %s hour</string>
+    <string name="open_separator">Open</string>
+    
+    <string name="cdialog_positive">Yes</string>
+    <string name="cdialog_negative">No</string>
+    <string name="cdialog_title">Delete Confirmation</string>
+    <string name="cdialog_message">Are you sure you want to delete this?</string>
+    
+    
+    <!-- The title of the time picker dialog. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_dialog_title">Set time</string>
+    <!-- The title of the date picker dialog. [CHAR LIMIT=NONE] -->
+    <string name="date_picker_dialog_title">Set date</string>
+    <!-- Name of the button in the date/time picker to accept the date/time change -->
+    <string name="date_time_set">Set</string>
+    <!-- Name of the button in the date/time picker to accept the date/time change -->
+    <string name="date_time_done">Done</string>
+    <!-- Preference framework strings. -->
+    <string name="cancel">Cancel</string>
+
+    <!-- TimePicker - accessibility support -->
+    <!-- Description of the button to increment the TimePicker's minute value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_increment_minute_button">Increment minute</string>
+    <!-- Description of the button to decrement the TimePicker's minute value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_decrement_minute_button">Decrement minute</string>
+    <!-- Description of the button to increment the TimePicker's hour value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_increment_hour_button">Increment hour</string>
+    <!-- Description of the button to decrement the TimePicker's hour value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_decrement_hour_button">Decrement hour</string>
+    <!-- Description of the button to increment the TimePicker's set PM value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_increment_set_pm_button">Set PM</string>
+    <!-- Description of the button to decrement the TimePicker's set AM value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_decrement_set_am_button">Set AM</string>
+
+    <!-- @hide DO NOT TRANSLATE. Separator between the hour and minute elements in a TimePicker widget -->
+    <string name="time_picker_separator">:</string>
+    <string name="no_restaurant_found">No restaurants found</string>
+    <string name="distance">distance</string>
+</resources>
+

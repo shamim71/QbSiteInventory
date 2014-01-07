@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_barCode"
+            style="@style/GreyTextMessage2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:lineSpacingExtra="8dip" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/GreyTextMessage2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:lineSpacingExtra="8dip" />
+
+        <TextView
+            android:id="@+id/tv_fullName"
+            style="@style/GreyTextMessage2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:lineSpacingExtra="8dip" />
+
+        <TextView
+            android:id="@+id/tv_itemUnit"
+            style="@style/GreyTextMessage2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:lineSpacingExtra="8dip" />
+
+        <TextView
+            android:id="@+id/tv_itemQuantity"
+            style="@style/GreyTextMessage2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:lineSpacingExtra="8dip" />
+
+        <EditText
+            android:id="@+id/et_Quantity"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:inputType="number" />
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/bottom_bar"
+        style="@style/BottomBarDimensions"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_bar_background_layers" >
+
+        <Button
+            android:id="@+id/btn_Checkout"
+            style="@style/BottomBarBtnStyle2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onClick="backToList"
+            android:text="@string/save" />
+    </RelativeLayout>
+
+</RelativeLayout>

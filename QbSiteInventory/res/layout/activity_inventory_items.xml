@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.versacomllc.qb"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/list_background_layers"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/lv_scannedItems"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_bar"
+        android:layout_alignParentTop="true"
+        android:clickable="true"
+        android:divider="@drawable/list_separator"
+        android:requiresFadingEdge="vertical" />
+
+    <RelativeLayout
+        android:id="@+id/bottom_bar"
+        style="@style/BottomBarDimensions"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_bar_background_layers" >
+
+        <LinearLayout
+            android:id="@+id/ll_total_price_container"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="4dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_Scan"
+                style="@style/BottomBarBtnStyle2"
+                android:onClick="launchScanner"
+                android:text="@string/scan" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/BottomContainerDimensions"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_margin="4dip"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_Manual"
+                style="@style/BottomBarBtnStyle2"
+                android:text="Manual" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/BottomContainerDimensions"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="4dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_Checkout"
+                style="@style/BottomBarBtnStyle2"
+                android:text="@string/checkout" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
