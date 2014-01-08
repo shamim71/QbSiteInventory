@@ -34,7 +34,7 @@ public class InventoryItemDetailsActivity extends Activity {
 	private TextView tvQuantity;
 	private TextView tvUnit;
 	private EditText etQuantity;
-	
+
 	private CheckedInventoryItem currentItem = null;
 	private boolean add = true;
 
@@ -57,9 +57,9 @@ public class InventoryItemDetailsActivity extends Activity {
 			add = false;
 			currentItem = InventoryQbApp.getCurrentItem();
 			populateModel(currentItem);
-		} 
+		}
 		/** From bar code scanner */
-		else if(!TextUtils.isEmpty(barCode)) {
+		else if (!TextUtils.isEmpty(barCode)) {
 			Toast.makeText(this, "Scan Result = " + barCode, Toast.LENGTH_SHORT)
 					.show();
 
@@ -82,7 +82,7 @@ public class InventoryItemDetailsActivity extends Activity {
 					public void onSpiceSuccess(ItemInventory response) {
 
 						Log.d(LOG_TAG, response + "");
-						if(response != null){
+						if (response != null) {
 							currentItem = new CheckedInventoryItem(response, 1);
 							populateModel(currentItem);
 						}
@@ -91,8 +91,9 @@ public class InventoryItemDetailsActivity extends Activity {
 					@Override
 					public void onSpiceError(RestCall<ItemInventory> restCall,
 							StringResponse response) {
-						Toast.makeText(InventoryItemDetailsActivity.this, "Error = " + response.getMessage(), Toast.LENGTH_SHORT)
-						.show();
+						Toast.makeText(InventoryItemDetailsActivity.this,
+								"Error = " + response.getMessage(),
+								Toast.LENGTH_SHORT).show();
 					}
 
 				}, new com.versacomllc.qb.spice.DefaultProgressIndicatorState(
@@ -116,9 +117,10 @@ public class InventoryItemDetailsActivity extends Activity {
 				+ item.getName();
 		final String itemFullNameText = getString(R.string.item_fullname_label)
 				+ item.getFullName();
-		final String quantityText = getString(R.string.quantity_Label) ;
-		final String unitText = getString(R.string.item_unit_label) + item.getUnitOfMeasureSetFullName();
-		
+		final String quantityText = getString(R.string.quantity_Label);
+		final String unitText = getString(R.string.item_unit_label)
+				+ item.getUnitOfMeasureSetFullName();
+
 		tvBarCode.setText(barCodeText);
 		tvName.setText(itemNameText);
 		tvFullName.setText(itemFullNameText);
@@ -127,25 +129,25 @@ public class InventoryItemDetailsActivity extends Activity {
 		etQuantity.setText(String.valueOf(item.getCount()));
 	}
 
-	private void updateModel(){
+	private void updateModel() {
 		String value = etQuantity.getText().toString();
 		int count = Integer.parseInt(value);
-		if(add){
-			if(currentItem != null && currentItem.getCount() > 0){
+		if (add) {
+			if (currentItem != null && currentItem.getCount() > 0) {
 				currentItem.setCount(count);
 				InventoryQbApp.addCheckedItem(currentItem);
 			}
-		}
-		else{
+		} else {
 			currentItem.setCount(count);
 			InventoryQbApp.updateCheckedItem(currentItem);
 		}
 
 	}
+
 	public void backToList(View v) {
 
 		updateModel();
-		
+
 		Intent intent = new Intent(getBaseContext(),
 				InventoryItemListActivity.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP

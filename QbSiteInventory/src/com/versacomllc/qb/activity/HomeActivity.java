@@ -1,6 +1,7 @@
 package com.versacomllc.qb.activity;
 
 import com.versacomllc.qb.R;
+import com.versacomllc.qb.utils.Constants;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -18,12 +19,14 @@ public class HomeActivity extends Activity {
     }
 
 	public void launchCheckout(View v) {
-		Intent intent = new Intent(this, InventoryItemListActivity.class);
+		Intent intent = new Intent(this, InventorySiteActivity.class);
+		intent.putExtra(Constants.EXTRA_TRANSACTION_TYPE, false);
 		startActivity(intent);
 	}
 	
 	public void launchCheckIn(View v) {
 		Intent intent = new Intent(this, InventorySiteActivity.class);
+		intent.putExtra(Constants.EXTRA_TRANSACTION_TYPE, true);
 		startActivity(intent);
 	}
 }

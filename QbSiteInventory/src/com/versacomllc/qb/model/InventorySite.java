@@ -1,5 +1,7 @@
 package com.versacomllc.qb.model;
 
+import java.util.List;
+
 import android.text.TextUtils;
 
 public class InventorySite {
@@ -17,6 +19,16 @@ public class InventorySite {
 	private String parentSiteRefName;
 
 	private String siteDesc;
+
+	List<InventorySite> childreen;
+	
+	public List<InventorySite> getChildreen() {
+		return childreen;
+	}
+
+	public void setChildreen(List<InventorySite> childreen) {
+		this.childreen = childreen;
+	}
 
 	public Long getId() {
 		return id;

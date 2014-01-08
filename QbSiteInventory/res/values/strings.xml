@@ -4,12 +4,12 @@
     <string name="app_name">Inventory App.</string>
     <string name="activity_title_inventory_site">Inventory site</string>
     <string name="scan">Scan</string>
-    <string name="scan_only_qr_codes">Scan only QR Codes</string>
+    <string name="button_manual">Manual</string>
     <string name="checkout">Checkout</string>
     <string name="checkIn">CheckIn</string>
     <string name="save">Save</string>
     <string name="button_next">Next</string>
-        <string name="label_select_site">Select a site:</string>
+    <string name="label_select_site">Select a site:</string>
     <string name="service_not_avilable">The service is not available. Please contact customer support!</string>
     <string name="invalid_server_response">Invalid server response. Please contact customer support!</string>
     <string name="internal_server_error">System error. Please contact customer support!</string>

@@ -13,13 +13,13 @@ import android.widget.TextView;
 
 import com.versacomllc.qb.model.InventorySite;
 
-public class SiteListAdapter extends ArrayAdapter<InventorySite> {
+public class SimpleDropDownListAdapter extends ArrayAdapter<InventorySite> {
 
 	private Context mContext;
 	private int resourceId;
 	private List<InventorySite> items;
 
-	public SiteListAdapter(Context context, int resource, List<InventorySite> objects) {
+	public SimpleDropDownListAdapter(Context context, int resource, List<InventorySite> objects) {
 		super(context, resource, objects);
 		this.mContext = context;
 		this.resourceId = resource;

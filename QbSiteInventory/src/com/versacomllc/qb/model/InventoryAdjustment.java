@@ -143,6 +143,73 @@ public class InventoryAdjustment {
         public String inventorySiteLocationRefListID;
 
         public String inventorySiteLocationRefFullName;
+
+		public String getListID() {
+			return listID;
+		}
+
+		public void setListID(String listID) {
+			this.listID = listID;
+		}
+
+		public String getFullName() {
+			return fullName;
+		}
+
+		public void setFullName(String fullName) {
+			this.fullName = fullName;
+		}
+
+		public int getNewQuantity() {
+			return newQuantity;
+		}
+
+		public void setNewQuantity(int newQuantity) {
+			this.newQuantity = newQuantity;
+		}
+
+		public int getQuantityDifference() {
+			return quantityDifference;
+		}
+
+		public void setQuantityDifference(int quantityDifference) {
+			this.quantityDifference = quantityDifference;
+		}
+
+		public String getSerialNumber() {
+			return serialNumber;
+		}
+
+		public void setSerialNumber(String serialNumber) {
+			this.serialNumber = serialNumber;
+		}
+
+		public String getLotNumber() {
+			return lotNumber;
+		}
+
+		public void setLotNumber(String lotNumber) {
+			this.lotNumber = lotNumber;
+		}
+
+		public String getInventorySiteLocationRefListID() {
+			return inventorySiteLocationRefListID;
+		}
+
+		public void setInventorySiteLocationRefListID(
+				String inventorySiteLocationRefListID) {
+			this.inventorySiteLocationRefListID = inventorySiteLocationRefListID;
+		}
+
+		public String getInventorySiteLocationRefFullName() {
+			return inventorySiteLocationRefFullName;
+		}
+
+		public void setInventorySiteLocationRefFullName(
+				String inventorySiteLocationRefFullName) {
+			this.inventorySiteLocationRefFullName = inventorySiteLocationRefFullName;
+		}
+        
     }
 
     public static class InventoryAdjustmentResponse
@@ -150,6 +217,43 @@ public class InventoryAdjustment {
         public String txnID;
 
         public int txnNumber;
+        
+        private String status;
+        
+        private long id;
+
+		public String getTxnID() {
+			return txnID;
+		}
+
+		public void setTxnID(String txnID) {
+			this.txnID = txnID;
+		}
+
+		public int getTxnNumber() {
+			return txnNumber;
+		}
+
+		public void setTxnNumber(int txnNumber) {
+			this.txnNumber = txnNumber;
+		}
+
+		public String getStatus() {
+			return status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public long getId() {
+			return id;
+		}
+
+		public void setId(long id) {
+			this.id = id;
+		}
+        
     }
     
 }

@@ -10,6 +10,7 @@ import android.app.Application;
 import com.google.gson.Gson;
 import com.versacomllc.qb.model.CheckedInventoryItem;
 import com.versacomllc.qb.model.InventoryAdjustment;
+import com.versacomllc.qb.model.InventorySite;
 import com.versacomllc.qb.utils.FileDataStorageManager;
 import com.versacomllc.qb.utils.FileDataStorageManager.StorageFile;
 
@@ -78,6 +79,27 @@ public class InventoryQbApp extends Application {
 				StorageFile.INVENTORY_ADJUSTMENT, jsonContent);
 	}
 
+	public void saveInventorySites(InventorySite[] sites){
+		final String jsonContent = jsonHelper.toJson(sites);
+		FileDataStorageManager.saveContentToFile(getBaseContext(),
+				StorageFile.INVENTORY_SITES, jsonContent);
+	}
+	public InventorySite[] getInventorySites(){
+		return loadObject(InventorySite[].class,
+				StorageFile.INVENTORY_SITES);
+	}
+	public InventorySite getInventorySite(final String listID){
+		InventorySite[] sites = getInventorySites();
+		if(sites == null) return null;
+		InventorySite mSite = null;
+		for(InventorySite site: sites){
+			if(site.getListID().equals(listID)){
+				mSite = site;
+				break;
+			}
+		}
+		return mSite;
+	}
 	private <T> T loadObject(Class<T> type, StorageFile name) {
 		String jsonContent = FileDataStorageManager.getContentFromFile(
 				getBaseContext(), name);

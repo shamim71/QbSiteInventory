@@ -9,6 +9,7 @@ import java.text.MessageFormat;
 public enum EndPoints {
 
 	
+	REST_CALL_GET_INVENTORY_ADJUSTMENT("/qb/inventory/adjustment"),
 	/**
 	 * Load all inventory sites.
 	 */
@@ -18,7 +19,7 @@ public enum EndPoints {
 	 */
 	REST_CALL_POST_ITEM_BY_BARCODE("/inventory/items/barcode"),
 
-	REST_CALL_GET_LOCAL_IP("/x-forwarded-for.php");
+	REST_CALL_GET_ADJUSTMENT_CONF("/configurations");
 
 	private final String address;
 

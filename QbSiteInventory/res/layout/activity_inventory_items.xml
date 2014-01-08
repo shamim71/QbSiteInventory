@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res/com.versacomllc.qb"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/list_background_layers"
@@ -51,7 +50,7 @@
             <Button
                 android:id="@+id/btn_Manual"
                 style="@style/BottomBarBtnStyle2"
-                android:text="Manual" />
+                android:text="@string/button_manual" />
         </LinearLayout>
 
         <LinearLayout
@@ -64,8 +63,9 @@
             android:orientation="horizontal" >
 
             <Button
-                android:id="@+id/btn_Checkout"
+                android:id="@+id/btn_Process"
                 style="@style/BottomBarBtnStyle2"
+                android:onClick="processTransaction"
                 android:text="@string/checkout" />
         </LinearLayout>
     </RelativeLayout>

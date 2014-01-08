@@ -16,13 +16,15 @@ import android.widget.Spinner;
 
 import com.versacomllc.qb.InventoryQbApp;
 import com.versacomllc.qb.R;
-import com.versacomllc.qb.adapter.SiteListAdapter;
+import com.versacomllc.qb.adapter.SimpleDropDownListAdapter;
+import com.versacomllc.qb.model.Configuration;
 import com.versacomllc.qb.model.InventoryAdjustment;
 import com.versacomllc.qb.model.InventorySite;
 import com.versacomllc.qb.model.StringResponse;
 import com.versacomllc.qb.spice.GenericGetRequest;
 import com.versacomllc.qb.spice.RestCall;
 import com.versacomllc.qb.spice.RetrySpiceCallback;
+import com.versacomllc.qb.utils.Constants;
 import com.versacomllc.qb.utils.EndPoints;
 
 public class InventorySiteActivity extends BaseActivity implements OnItemSelectedListener {
@@ -31,12 +33,19 @@ public class InventorySiteActivity extends BaseActivity implements OnItemSelecte
 	ArrayAdapter<InventorySite> adapter = null;
 	InventoryAdjustment adjustment = new InventoryAdjustment();
 	InventoryQbApp state = null;
+	boolean checkIn = false;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_inventory_site);
 		setTitle(getString(R.string.activity_title_inventory_site));
 
+		Intent intent = getIntent();
+		if (intent != null) {
+			checkIn = intent.getBooleanExtra(Constants.EXTRA_TRANSACTION_TYPE,
+					false);
+		}
+		
 		state = getApplicationState();
 		
 		this.initComponents();
@@ -52,7 +61,7 @@ public class InventorySiteActivity extends BaseActivity implements OnItemSelecte
 		//List<InventorySite> list = Arrays.asList(objects);
 		List<InventorySite> list = getParentSites(objects);
 		
-		adapter = new SiteListAdapter(this, android.R.layout.simple_spinner_item, list); 
+		adapter = new SimpleDropDownListAdapter(this, android.R.layout.simple_spinner_item, list); 
 		// Specify the layout to use when the list of choices appears
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		// Apply the adapter to the spinner
@@ -63,12 +72,20 @@ public class InventorySiteActivity extends BaseActivity implements OnItemSelecte
 		String endPoint = EndPoints.REST_CALL_GET_INVENTORY_SITES
 				.getSimpleAddress();
 
-
 		restHelper.execute(new GenericGetRequest<InventorySite[]>(InventorySite[].class, endPoint), new RetrySpiceCallback<InventorySite[]>(this) {
 
 			@Override
 			public void onSpiceSuccess(InventorySite[] response) {
+				
+				
+				if(response != null){
+					getApplicationState().saveInventorySites(response);
+				}
+				
+				initConfigurationData();
+				
 				populateSiteList(response);
+				
 			}
 
 			@Override
@@ -78,11 +95,31 @@ public class InventorySiteActivity extends BaseActivity implements OnItemSelecte
 				
 			}
 		}, new com.versacomllc.qb.spice.DefaultProgressIndicatorState(
-				getString(R.string.processing)));
-		
-		
+				getString(R.string.processing),false));
+
 	}
 
+	private void initConfigurationData() {
+		String endPoint = EndPoints.REST_CALL_GET_ADJUSTMENT_CONF
+				.getSimpleAddress();
+
+		restHelper.execute(new GenericGetRequest<Configuration>(Configuration.class, endPoint), new RetrySpiceCallback<Configuration>(this) {
+
+			@Override
+			public void onSpiceSuccess(Configuration response) {
+				adjustment.setAccountRefListID(response.getAccountRefListId());
+				adjustment.setAccountRefFullName(response.getAccountRefFullName());
+	
+			}
+
+			@Override
+			public void onSpiceError(RestCall<Configuration> restCall,
+					StringResponse response) {
+				
+			}
+		}, new com.versacomllc.qb.spice.DefaultProgressIndicatorState());
+
+	}
 	private List<InventorySite> getParentSites(InventorySite[] sites){
 		List<InventorySite> parentSites = new ArrayList<InventorySite>();
 		for(InventorySite site: sites){
@@ -99,6 +136,7 @@ public class InventorySiteActivity extends BaseActivity implements OnItemSelecte
 	public void navigateToList(View v){
 		
 		Intent intent = new Intent(this, InventoryItemListActivity.class);
+		intent.putExtra(Constants.EXTRA_TRANSACTION_TYPE, checkIn);
 		startActivity(intent);
 	}
 

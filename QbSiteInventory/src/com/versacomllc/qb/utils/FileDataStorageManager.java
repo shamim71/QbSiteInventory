@@ -21,6 +21,7 @@ public class FileDataStorageManager {
      * File for Greeting store items
      */
     INVENTORY_ADJUSTMENT,
+    INVENTORY_SITES,
 
   }
 
