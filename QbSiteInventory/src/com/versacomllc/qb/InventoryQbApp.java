@@ -8,6 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import android.app.Application;
 
 import com.google.gson.Gson;
+import com.versacomllc.qb.model.AuthenticationResponse;
 import com.versacomllc.qb.model.CheckedInventoryItem;
 import com.versacomllc.qb.model.InventoryAdjustment;
 import com.versacomllc.qb.model.InventorySite;
@@ -73,7 +74,17 @@ public class InventoryQbApp extends Application {
 	public static void setCurrentItem(CheckedInventoryItem currentItem) {
 		InventoryQbApp.currentItem = currentItem;
 	}
+	public void saveAuthentication(AuthenticationResponse object) {
+		final String jsonContent = jsonHelper.toJson(object);
+		FileDataStorageManager.saveContentToFile(getBaseContext(),
+				StorageFile.USER_AUTHENTICATION, jsonContent);
+	}
 
+	public AuthenticationResponse getAuthentication(){
+		return loadObject(AuthenticationResponse.class,
+				StorageFile.USER_AUTHENTICATION);
+	}
+	
 	public void saveInventoryAdjustment(InventoryAdjustment adjustment) {
 		final String jsonContent = jsonHelper.toJson(adjustment);
 		FileDataStorageManager.saveContentToFile(getBaseContext(),

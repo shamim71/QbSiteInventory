@@ -6,17 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <Button
-        android:id="@+id/btn_checkOut"
+        android:id="@+id/btn_checkOut" style="@style/DefaultComponentMargin"
         android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:onClick="launchCheckout"
         android:text="@string/checkout" />
 
     <Button
-        android:id="@+id/btn_checkIn"
+        android:id="@+id/btn_checkIn" style="@style/DefaultComponentMargin"
         android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:onClick="launchCheckIn"
         android:text="@string/checkIn" />
+    
+    <Button style="@style/DefaultComponentMargin" android:layout_marginTop="50dp"
+        android:id="@+id/btn_Signout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:onClick="signOut"
+        android:text="@string/button_sign_out" />
+        
 </LinearLayout>
 

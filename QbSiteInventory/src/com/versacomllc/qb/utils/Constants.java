@@ -15,5 +15,6 @@ public final class Constants {
   public static final String EXTRA_BARCODE= "com.versacomllc.qb.EXTRA_BARCODE";
   public static final String EXTRA_ITEM_ADDED= "com.versacomllc.qb.EXTRA_ITEM_ADDED";
   public static final String EXTRA_TRANSACTION_TYPE= "com.versacomllc.qb.EXTRA_TRANSACTION_TYPE";
-
+  public static final String ACTION_FINISH = 
+          "com.versacomllc.qb.activity.LoginActivity.ACTION_FINISH";
 }

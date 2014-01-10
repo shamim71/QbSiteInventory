@@ -26,6 +26,17 @@ public class InventoryAdjustment {
 
 	private String memo;
 	
+	private String userId;
+	
+	
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
 	private List<InventoryAdjustmentLineItem> items;
 	
 

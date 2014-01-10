@@ -4,20 +4,23 @@
     <dimen name="category_image_thumbnail_size">105dp</dimen>
     <dimen name="article_list_image_thumbnail_size">65dp</dimen>
     <dimen name="sliding_menu_offset">60dp</dimen>
-    
     <dimen name="minimal_text">10sp</dimen>
     <dimen name="small_text">12sp</dimen>
     <dimen name="medium_text">14sp</dimen>
     <dimen name="big_text">16sp</dimen>
     <dimen name="huge_text">18sp</dimen>
     <dimen name="title_text">20sp</dimen>
-
     <dimen name="listview_left_padding">15dp</dimen>
     <dimen name="listview_right_padding">15dp</dimen>
     <dimen name="listview_top_padding">13dp</dimen>
     <dimen name="listview_bottom_padding">13dp</dimen>
     <dimen name="viewpagertitle_left_padding">-12dp</dimen>
     <dimen name="viewpagertitle_top_padding">12dp</dimen>
-        <dimen name="tmobile_font_83">15sp</dimen>
+    <dimen name="tmobile_font_83">15sp</dimen>
     <dimen name="progress_normal">24dp</dimen>
+    
+    <dimen name="content_left_margin">10dp</dimen>
+    <dimen name="content_right_margin">10dp</dimen>
+    <dimen name="content_top_margin">10dp</dimen>
+
 </resources>

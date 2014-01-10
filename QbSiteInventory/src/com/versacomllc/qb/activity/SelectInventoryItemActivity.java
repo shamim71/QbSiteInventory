@@ -36,7 +36,7 @@ public class SelectInventoryItemActivity extends BaseActivity implements
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_select_inventory_item);
-		setTitle(getString(R.string.activity_title_select_inventory_item));
+		setTitle(getString(R.string.app_name));
 
 		this.initComponents();
 

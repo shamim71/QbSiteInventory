@@ -416,5 +416,11 @@
         <item name="android:textColor">@color/anthracite</item>
         <item name="android:textSize">@dimen/tmobile_font_83</item>
         <item name="android:gravity">center_vertical</item>
-    </style>    
+    </style>
+    
+    <style name="DefaultComponentMargin">
+        <item name="android:layout_marginTop">@dimen/content_top_margin</item>
+        <item name="android:layout_marginLeft">@dimen/content_left_margin</item>
+        <item name="android:layout_marginRight">@dimen/content_right_margin</item>
+    </style>
 </resources>

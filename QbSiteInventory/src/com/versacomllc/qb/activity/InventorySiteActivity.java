@@ -17,6 +17,7 @@ import android.widget.Spinner;
 import com.versacomllc.qb.InventoryQbApp;
 import com.versacomllc.qb.R;
 import com.versacomllc.qb.adapter.SimpleDropDownListAdapter;
+import com.versacomllc.qb.model.AuthenticationResponse;
 import com.versacomllc.qb.model.Configuration;
 import com.versacomllc.qb.model.InventoryAdjustment;
 import com.versacomllc.qb.model.InventorySite;
@@ -38,7 +39,7 @@ public class InventorySiteActivity extends BaseActivity implements OnItemSelecte
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_inventory_site);
-		setTitle(getString(R.string.activity_title_inventory_site));
+		setTitle(getString(R.string.app_name));
 
 		Intent intent = getIntent();
 		if (intent != null) {
@@ -148,7 +149,10 @@ public class InventorySiteActivity extends BaseActivity implements OnItemSelecte
 		Log.d(LOG_TAG, site.getListID());
 		Log.d(LOG_TAG, site.getName());
 		
-
+		AuthenticationResponse authentication = getApplicationState().getAuthentication();
+		if(authentication != null){
+			adjustment.setUserId(authentication.getId());
+		}
 		adjustment.setInventorySiteRefListID(site.getListID());
 		adjustment.setInventorySiteRefName(site.getName());
 		

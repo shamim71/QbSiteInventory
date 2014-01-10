@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Inventory App.</string>
+    <string name="app_name">Versacom Inventory</string>
     <string name="activity_title_inventory_site">Inventory site</string>
     <string name="activity_title_select_inventory_item">Inventory item</string>
     <string name="scan">Scan</string>
@@ -10,6 +10,8 @@
     <string name="checkIn">CheckIn</string>
     <string name="save">Save</string>
     <string name="button_next">Next</string>
+    <string name="button_sign_out">Signout</string>
+    <string name="button_login">Login</string>
     <string name="label_select_site">Select a site: </string>
     <string name="label_select_item">Enter item name: </string>
     <string name="service_not_avilable">The service is not available. Please contact customer support!</string>
@@ -28,5 +30,8 @@
     <string name="item_fullname_label">Full name: </string>
     <string name="quantity_Label">Quantity: </string>
     <string name="item_unit_label">Unit: </string>
+    <string name="email_hint">Please enter email address</string>
+    <string name="password_hint">Please enter password</string>
+    <string name="login_enter_authentication">Please enter email address/password</string>
 
 </resources>

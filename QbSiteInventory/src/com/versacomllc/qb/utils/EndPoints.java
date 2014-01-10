@@ -8,6 +8,7 @@ import java.text.MessageFormat;
  */
 public enum EndPoints {
 
+	REST_CALL_POST_AUTHENTICATE("/authenticate"),
 	
 	REST_CALL_GET_INVENTORY_ADJUSTMENT("/qb/inventory/adjustment"),
 	/**

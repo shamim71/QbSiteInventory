@@ -23,7 +23,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name=".activity.HomeActivity"
+            android:name=".activity.LoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,6 +51,12 @@
             android:name=".activity.SelectInventoryItemActivity"
             android:label="@string/activity_title_inventory_site"
             android:screenOrientation="portrait" />
+        
+        <activity 
+            android:name=".activity.HomeActivity" 
+            android:label="@string/activity_title_inventory_site"
+            android:screenOrientation="portrait" />
+                
         <!-- This Service is needed by SpiceRestHelper -->
         <service
             android:name="com.versacomllc.qb.spice.CustomSpiceService"
