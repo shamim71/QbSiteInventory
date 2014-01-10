@@ -55,8 +55,8 @@ public class CheckoutListAdapter extends ArrayAdapter<CheckedInventoryItem> {
 	      
 	      holder.name.setText(item.getName());
 	      holder.description.setText(item.getFullName());
-	      final String quantityText = getContext().getString(R.string.quantity_Label) + item.getCount();
-	      holder.quantity.setText(quantityText);
+	
+	      holder.quantity.setText(String.valueOf(item.getCount()));
 	      
 		return convertView;
 	}

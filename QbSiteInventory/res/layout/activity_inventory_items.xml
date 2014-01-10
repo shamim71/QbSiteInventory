@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/list_background_layers"
     android:orientation="vertical" >
 
     <ListView
@@ -12,7 +11,6 @@
         android:layout_above="@+id/bottom_bar"
         android:layout_alignParentTop="true"
         android:clickable="true"
-        android:divider="@drawable/list_separator"
         android:requiresFadingEdge="vertical" />
 
     <RelativeLayout
@@ -50,6 +48,7 @@
             <Button
                 android:id="@+id/btn_Manual"
                 style="@style/BottomBarBtnStyle2"
+                android:onClick="manualItemSelection"
                 android:text="@string/button_manual" />
         </LinearLayout>
 

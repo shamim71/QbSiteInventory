@@ -11,6 +11,7 @@ import com.google.gson.Gson;
 import com.versacomllc.qb.model.CheckedInventoryItem;
 import com.versacomllc.qb.model.InventoryAdjustment;
 import com.versacomllc.qb.model.InventorySite;
+import com.versacomllc.qb.model.ItemInventory;
 import com.versacomllc.qb.utils.FileDataStorageManager;
 import com.versacomllc.qb.utils.FileDataStorageManager.StorageFile;
 
@@ -88,6 +89,17 @@ public class InventoryQbApp extends Application {
 		return loadObject(InventorySite[].class,
 				StorageFile.INVENTORY_SITES);
 	}
+	
+	public void saveInventoryItems(ItemInventory[] items){
+		final String jsonContent = jsonHelper.toJson(items);
+		FileDataStorageManager.saveContentToFile(getBaseContext(),
+				StorageFile.INVENTORY_ITEMS, jsonContent);
+	}
+	public ItemInventory[] getInventoryItems(){
+		return loadObject(ItemInventory[].class,
+				StorageFile.INVENTORY_ITEMS);
+	}
+	
 	public InventorySite getInventorySite(final String listID){
 		InventorySite[] sites = getInventorySites();
 		if(sites == null) return null;

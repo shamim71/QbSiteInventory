@@ -410,7 +410,6 @@
         <item name="android:minHeight">@dimen/progress_normal</item>
         <item name="android:maxHeight">@dimen/progress_normal</item>
         <item name="android:indeterminateDuration">1400</item>
-        <item name="android:indeterminateDrawable">@drawable/indeterminate_progressbar</item>
     </style>
     
     <style name="funbox_medium_anthracite_style" parent="@android:style/TextAppearance">

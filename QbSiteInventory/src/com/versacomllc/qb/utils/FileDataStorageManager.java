@@ -22,7 +22,7 @@ public class FileDataStorageManager {
      */
     INVENTORY_ADJUSTMENT,
     INVENTORY_SITES,
-
+    INVENTORY_ITEMS,
   }
 
   /**

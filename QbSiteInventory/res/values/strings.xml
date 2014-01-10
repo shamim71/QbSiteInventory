@@ -3,13 +3,15 @@
 
     <string name="app_name">Inventory App.</string>
     <string name="activity_title_inventory_site">Inventory site</string>
+    <string name="activity_title_select_inventory_item">Inventory item</string>
     <string name="scan">Scan</string>
     <string name="button_manual">Manual</string>
     <string name="checkout">Checkout</string>
     <string name="checkIn">CheckIn</string>
     <string name="save">Save</string>
     <string name="button_next">Next</string>
-    <string name="label_select_site">Select a site:</string>
+    <string name="label_select_site">Select a site: </string>
+    <string name="label_select_item">Enter item name: </string>
     <string name="service_not_avilable">The service is not available. Please contact customer support!</string>
     <string name="invalid_server_response">Invalid server response. Please contact customer support!</string>
     <string name="internal_server_error">System error. Please contact customer support!</string>
@@ -23,8 +25,8 @@
     <string name="processing">Processing&#8230;</string>
     <string name="barcode_label">Bar code: </string>
     <string name="item_name_label">Name: </string>
-    <string name="item_fullname_label">Full name</string>
+    <string name="item_fullname_label">Full name: </string>
     <string name="quantity_Label">Quantity: </string>
-    <string name="item_unit_label">Unit of measurement: </string>
+    <string name="item_unit_label">Unit: </string>
 
 </resources>

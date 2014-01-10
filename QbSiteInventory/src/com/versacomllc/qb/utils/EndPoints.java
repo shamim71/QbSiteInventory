@@ -19,6 +19,8 @@ public enum EndPoints {
 	 */
 	REST_CALL_POST_ITEM_BY_BARCODE("/inventory/items/barcode"),
 
+	REST_CALL_GET_ALL_INVENTORY_ITEMS("/inventory/items"),
+	
 	REST_CALL_GET_ADJUSTMENT_CONF("/configurations");
 
 	private final String address;

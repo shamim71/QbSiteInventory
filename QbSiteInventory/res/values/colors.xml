@@ -33,5 +33,5 @@
     <color name="translucent_background">#CCA3A3A3</color>
     <color name="translucent_white">#CCFFFFFF</color>
     <color name="anthracite">#4B4B4B</color>
-
+	<color name="DarkCayan">#99CCFF</color>
 </resources>

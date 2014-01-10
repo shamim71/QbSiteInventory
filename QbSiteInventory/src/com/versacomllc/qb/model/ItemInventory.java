@@ -235,5 +235,10 @@ public class ItemInventory {
 		this.quantityOnHand = quantityOnHand;
 	}
 
+	@Override
+	public String toString() {
+		return name;
+	}
+
 
 }

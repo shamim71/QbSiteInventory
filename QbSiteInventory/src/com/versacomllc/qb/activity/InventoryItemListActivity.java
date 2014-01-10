@@ -27,6 +27,7 @@ import com.versacomllc.qb.model.InventoryAdjustment;
 import com.versacomllc.qb.model.InventoryAdjustment.InventoryAdjustmentLineItem;
 import com.versacomllc.qb.model.InventoryAdjustment.InventoryAdjustmentResponse;
 import com.versacomllc.qb.model.StringResponse;
+import com.versacomllc.qb.spice.DefaultProgressIndicatorState;
 import com.versacomllc.qb.spice.GenericPostRequest;
 import com.versacomllc.qb.spice.RestCall;
 import com.versacomllc.qb.spice.RetrySpiceCallback;
@@ -166,6 +167,12 @@ public class InventoryItemListActivity extends BaseActivity {
 		}
 		
 	}
+	
+	public void manualItemSelection(View v){
+		
+		Intent intent = new Intent(this, SelectInventoryItemActivity.class);
+		startActivity(intent);
+	}
 
 	private void processInventoryCheckout(final InventoryAdjustment adjustment) {
 		String endPoint = EndPoints.REST_CALL_GET_INVENTORY_ADJUSTMENT
@@ -180,11 +187,13 @@ public class InventoryItemListActivity extends BaseActivity {
 							InventoryAdjustmentResponse response) {
 
 						Log.d(LOG_TAG, response + "");
+						
 						Toast.makeText(
 								InventoryItemListActivity.this,
 								"Txn completed successfully :"
 										+ response.getStatus(),
 								Toast.LENGTH_SHORT).show();
+						
 						InventoryQbApp.getCheckedItems().clear();
 						adapter.notifyDataSetChanged();
 					}
@@ -198,7 +207,7 @@ public class InventoryItemListActivity extends BaseActivity {
 								Toast.LENGTH_SHORT).show();
 					}
 
-				}, new com.versacomllc.qb.spice.DefaultProgressIndicatorState(
+				}, new DefaultProgressIndicatorState(
 						getString(R.string.processing)));
 
 	}

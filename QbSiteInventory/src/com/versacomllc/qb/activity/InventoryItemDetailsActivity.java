@@ -60,8 +60,8 @@ public class InventoryItemDetailsActivity extends Activity {
 		}
 		/** From bar code scanner */
 		else if (!TextUtils.isEmpty(barCode)) {
-			Toast.makeText(this, "Scan Result = " + barCode, Toast.LENGTH_SHORT)
-					.show();
+/*			Toast.makeText(this, "Scan Result = " + barCode, Toast.LENGTH_SHORT)
+					.show();*/
 
 			initServiceData(barCode);
 		}
@@ -112,14 +112,15 @@ public class InventoryItemDetailsActivity extends Activity {
 
 	private void populateModel(CheckedInventoryItem item) {
 		final String barCodeText = getString(R.string.barcode_label)
-				+ item.getBarCodeValue();
+				+" "+ item.getBarCodeValue();
 		final String itemNameText = getString(R.string.item_name_label)
-				+ item.getName();
+				+" "+ item.getName();
 		final String itemFullNameText = getString(R.string.item_fullname_label)
-				+ item.getFullName();
+				+" "+ item.getFullName();
 		final String quantityText = getString(R.string.quantity_Label);
+		final String unitM = (item.getUnitOfMeasureSetFullName() == null) ? "": item.getUnitOfMeasureSetFullName();
 		final String unitText = getString(R.string.item_unit_label)
-				+ item.getUnitOfMeasureSetFullName();
+				+" "+ unitM;
 
 		tvBarCode.setText(barCodeText);
 		tvName.setText(itemNameText);
