@@ -1,8 +1,10 @@
 package com.versacomllc.qb.activity;
 
+import static android.view.View.GONE;
 import static com.versacomllc.qb.utils.Constants.LOG_TAG;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import android.content.Intent;
@@ -13,10 +15,12 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.versacomllc.qb.InventoryQbApp;
 import com.versacomllc.qb.R;
 import com.versacomllc.qb.adapter.SimpleDropDownListAdapter;
+import com.versacomllc.qb.adapter.SiteAccessDropDownListAdapter;
 import com.versacomllc.qb.gateway.domain.CustomerSiteAccess;
 import com.versacomllc.qb.model.AuthenticationResponse;
 import com.versacomllc.qb.model.Configuration;
@@ -35,6 +39,7 @@ public class InventorySiteActivity extends BaseActivity implements OnItemSelecte
 
 
 	ArrayAdapter<InventorySite> adapter = null;
+	ArrayAdapter<CustomerSiteAccess> customerSiteAdapter = null;
 	InventoryAdjustment adjustment = new InventoryAdjustment();
 	InventoryQbApp state = null;
 	boolean checkIn = false;
@@ -76,6 +81,40 @@ public class InventorySiteActivity extends BaseActivity implements OnItemSelecte
 		// Apply the adapter to the spinner
 		spinner.setAdapter(adapter);
 		spinner.setOnItemSelectedListener(this);
+	}
+	
+	private void populateCustomerSiteAccessList(CustomerSiteAccess[] objects){
+		Spinner spinner = (Spinner) findViewById(R.id.sp_customerSiteAccess);
+		TextView tvSiteAccess = (TextView) findViewById(R.id.tv_customerSiteAccess);
+		if(objects == null || objects.length == 0){
+			spinner.setVisibility(GONE);
+			tvSiteAccess.setVisibility(GONE);
+		}
+
+		List<CustomerSiteAccess> list = Arrays.asList(objects);
+		customerSiteAdapter = new SiteAccessDropDownListAdapter(this, android.R.layout.simple_spinner_item, list); 
+		// Specify the layout to use when the list of choices appears
+		customerSiteAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		// Apply the adapter to the spinner
+		spinner.setAdapter(customerSiteAdapter);
+		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			@Override
+			public void onItemSelected(AdapterView<?> arg0, View arg1,
+					int position, long arg3) {
+			CustomerSiteAccess siteAccess =	customerSiteAdapter.getItem(position);
+				if(siteAccess != null){
+					Log.d(LOG_TAG, " log: "+ siteAccess.siteId);
+					adjustment.setCustomerSiteAccessId(siteAccess.getSiteId());
+				}
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+			
+				
+			}
+		});
 	}
 	private void initServiceData() {
 		String endPoint = EndPoints.REST_CALL_GET_INVENTORY_SITES
@@ -143,8 +182,7 @@ public class InventorySiteActivity extends BaseActivity implements OnItemSelecte
 					StringResponse response) {
 				
 			}
-		}, new DefaultProgressIndicatorState(
-				getString(R.string.processing),true));
+		}, new DefaultProgressIndicatorState());
 
 	}
 	
@@ -158,7 +196,7 @@ public class InventorySiteActivity extends BaseActivity implements OnItemSelecte
 			@Override
 			public void onSpiceSuccess(CustomerSiteAccess[] response) {
 				
-				Log.d(LOG_TAG, "Response size : "+ response.length);
+				populateCustomerSiteAccessList(response);
 			}
 
 			@Override

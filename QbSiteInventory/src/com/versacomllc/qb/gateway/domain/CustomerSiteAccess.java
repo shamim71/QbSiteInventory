@@ -112,4 +112,10 @@ public class CustomerSiteAccess {
 		this.zipCode = zipCode;
 	}
 
+	@Override
+	public String toString() {
+		return "" + customer + " -> "
+				+ siteId + "";
+	}
+
 }

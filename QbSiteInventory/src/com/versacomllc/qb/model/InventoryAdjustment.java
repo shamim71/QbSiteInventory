@@ -28,7 +28,16 @@ public class InventoryAdjustment {
 	
 	private String userId;
 	
+	private String customerSiteAccessId;
 	
+	public String getCustomerSiteAccessId() {
+		return customerSiteAccessId;
+	}
+
+	public void setCustomerSiteAccessId(String customerSiteAccessId) {
+		this.customerSiteAccessId = customerSiteAccessId;
+	}
+
 	public String getUserId() {
 		return userId;
 	}

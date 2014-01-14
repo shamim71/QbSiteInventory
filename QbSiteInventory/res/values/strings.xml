@@ -12,7 +12,8 @@
     <string name="button_next">Next</string>
     <string name="button_sign_out">Signout</string>
     <string name="button_login">Login</string>
-    <string name="label_select_site">Select a site: </string>
+    <string name="label_select_site">Select inventory site: </string>
+       <string name="label_select_customer_site_access">Select customer site access: </string>
     <string name="label_select_item">Enter item name: </string>
     <string name="service_not_avilable">The service is not available. Please contact customer support!</string>
     <string name="invalid_server_response">Invalid server response. Please contact customer support!</string>

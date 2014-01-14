@@ -27,6 +27,24 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp" />
+        
+        <TextView
+            android:id="@+id/tv_customerSiteAccess"
+            style="@style/GreyTextMessage2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="8dip"
+            android:text="@string/label_select_customer_site_access" />
+        
+        <Spinner
+            android:id="@+id/sp_customerSiteAccess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp" />        
     </LinearLayout>
 
     <RelativeLayout
