@@ -5,6 +5,8 @@ import static com.versacomllc.qb.utils.Constants.LOG_TAG;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -13,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -41,7 +44,7 @@ public class InventoryItemListActivity extends BaseActivity {
 	private Boolean checkIn = false;
 
 	private Button btnProcess;
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -54,10 +57,9 @@ public class InventoryItemListActivity extends BaseActivity {
 					false);
 		}
 		btnProcess = (Button) findViewById(R.id.btn_Process);
-		if(checkIn){
+		if (checkIn) {
 			btnProcess.setText(getResources().getString(R.string.checkIn));
-		}
-		else{
+		} else {
 			btnProcess.setText(getResources().getString(R.string.checkout));
 		}
 	}
@@ -85,6 +87,44 @@ public class InventoryItemListActivity extends BaseActivity {
 					processScannedResult(null);
 				}
 
+			}
+		});
+		listViewItems.setOnItemLongClickListener(new OnItemLongClickListener() {
+
+			@Override
+			public boolean onItemLongClick(AdapterView<?> parent, View view,
+					final int position, long id) {
+				
+				
+				
+				final AlertDialog.Builder builder = new AlertDialog.Builder(
+						InventoryItemListActivity.this);
+				builder.setMessage(R.string.delete_confirmation_message)
+						.setTitle(R.string.delete_confirmation_title);
+				builder.setPositiveButton(R.string.ok,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								CheckedInventoryItem item = adapter
+										.getItem(position);
+
+								if (item != null) {
+									InventoryQbApp.getCheckedItems().remove(
+											position);
+									adapter.notifyDataSetChanged();
+
+								}
+							}
+						});
+				builder.setNegativeButton(R.string.cancel,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+
+							}
+						});
+
+				AlertDialog dialog = builder.create();
+				dialog.show();
+				return true;
 			}
 		});
 
@@ -155,21 +195,18 @@ public class InventoryItemListActivity extends BaseActivity {
 		Log.d(LOG_TAG,
 				"Processing checkin/checkout for item: "
 						+ adjustment.getInventorySiteRefName());
-		if(adjustment.getItems().size() == 0 ){
-			Toast.makeText(
-					InventoryItemListActivity.this,
-					"Please add item(s) to proceed transaction"
-							,
+		if (adjustment.getItems().size() == 0) {
+			Toast.makeText(InventoryItemListActivity.this,
+					"Please add item(s) to proceed transaction",
 					Toast.LENGTH_SHORT).show();
-		}
-		else{
+		} else {
 			processInventoryCheckout(adjustment);
 		}
-		
+
 	}
-	
-	public void manualItemSelection(View v){
-		
+
+	public void manualItemSelection(View v) {
+
 		Intent intent = new Intent(this, SelectInventoryItemActivity.class);
 		startActivity(intent);
 	}
@@ -187,13 +224,13 @@ public class InventoryItemListActivity extends BaseActivity {
 							InventoryAdjustmentResponse response) {
 
 						Log.d(LOG_TAG, response + "");
-						
+
 						Toast.makeText(
 								InventoryItemListActivity.this,
 								"Txn completed successfully :"
 										+ response.getStatus(),
 								Toast.LENGTH_SHORT).show();
-						
+
 						InventoryQbApp.getCheckedItems().clear();
 						adapter.notifyDataSetChanged();
 					}

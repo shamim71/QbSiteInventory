@@ -17,11 +17,14 @@ import android.widget.Spinner;
 import com.versacomllc.qb.InventoryQbApp;
 import com.versacomllc.qb.R;
 import com.versacomllc.qb.adapter.SimpleDropDownListAdapter;
+import com.versacomllc.qb.gateway.domain.CustomerSiteAccess;
 import com.versacomllc.qb.model.AuthenticationResponse;
 import com.versacomllc.qb.model.Configuration;
 import com.versacomllc.qb.model.InventoryAdjustment;
 import com.versacomllc.qb.model.InventorySite;
 import com.versacomllc.qb.model.StringResponse;
+import com.versacomllc.qb.service.LocationFinderService;
+import com.versacomllc.qb.spice.DefaultProgressIndicatorState;
 import com.versacomllc.qb.spice.GenericGetRequest;
 import com.versacomllc.qb.spice.RestCall;
 import com.versacomllc.qb.spice.RetrySpiceCallback;
@@ -35,6 +38,8 @@ public class InventorySiteActivity extends BaseActivity implements OnItemSelecte
 	InventoryAdjustment adjustment = new InventoryAdjustment();
 	InventoryQbApp state = null;
 	boolean checkIn = false;
+    double latitude = 0.0f;
+    double longitude = 0.0f;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -48,6 +53,9 @@ public class InventorySiteActivity extends BaseActivity implements OnItemSelecte
 		}
 		
 		state = getApplicationState();
+		
+		locationFinderService = new LocationFinderService(this);
+		this.checkLocation();
 		
 		this.initComponents();
 
@@ -85,6 +93,8 @@ public class InventorySiteActivity extends BaseActivity implements OnItemSelecte
 				
 				initConfigurationData();
 				
+				findCustomerSiteAccess(latitude, longitude, 1f);
+				
 				populateSiteList(response);
 				
 			}
@@ -95,11 +105,26 @@ public class InventorySiteActivity extends BaseActivity implements OnItemSelecte
 			
 				
 			}
-		}, new com.versacomllc.qb.spice.DefaultProgressIndicatorState(
+		}, new DefaultProgressIndicatorState(
 				getString(R.string.processing),false));
 
 	}
-
+	private void checkLocation(){
+		 // check if GPS enabled    
+       if(locationFinderService.canGetLocation()){
+            
+           latitude = locationFinderService.getLatitude();
+           longitude = locationFinderService.getLongitude();
+            
+           // \n is for new line
+          // Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();   
+       }else{
+           // can't get location
+           // GPS or Network is not enabled
+           // Ask user to enable GPS/network in settings
+       	locationFinderService.showSettingsAlert();
+       }
+	}
 	private void initConfigurationData() {
 		String endPoint = EndPoints.REST_CALL_GET_ADJUSTMENT_CONF
 				.getSimpleAddress();
@@ -118,9 +143,33 @@ public class InventorySiteActivity extends BaseActivity implements OnItemSelecte
 					StringResponse response) {
 				
 			}
-		}, new com.versacomllc.qb.spice.DefaultProgressIndicatorState());
+		}, new DefaultProgressIndicatorState(
+				getString(R.string.processing),true));
 
 	}
+	
+	private void findCustomerSiteAccess(double latitude, double longitude, double radius) {
+		
+		String endPoint = EndPoints.REST_CALL_GET_CUSTOMER_SITE_ACCESS_LIST.getAddress(latitude, longitude, radius);
+			
+
+		restHelper.execute(new GenericGetRequest<CustomerSiteAccess[]>(CustomerSiteAccess[].class, endPoint), new RetrySpiceCallback<CustomerSiteAccess[]>(this) {
+
+			@Override
+			public void onSpiceSuccess(CustomerSiteAccess[] response) {
+				
+				Log.d(LOG_TAG, "Response size : "+ response.length);
+			}
+
+			@Override
+			public void onSpiceError(RestCall<CustomerSiteAccess[]> restCall,
+					StringResponse response) {
+				
+			}
+		}, new DefaultProgressIndicatorState());
+
+	}
+	
 	private List<InventorySite> getParentSites(InventorySite[] sites){
 		List<InventorySite> parentSites = new ArrayList<InventorySite>();
 		for(InventorySite site: sites){

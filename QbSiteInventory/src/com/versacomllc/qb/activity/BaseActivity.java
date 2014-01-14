@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 
 import com.versacomllc.qb.InventoryQbApp;
+import com.versacomllc.qb.service.LocationFinderService;
 import com.versacomllc.qb.spice.SpiceRestHelper;
 
 public class BaseActivity extends Activity {
@@ -15,6 +16,8 @@ public class BaseActivity extends Activity {
 	protected SpiceRestHelper restHelper = new SpiceRestHelper();
 	
 	private FinishReceiver finishReceiver;
+	
+	protected LocationFinderService locationFinderService;
 	
 	protected InventoryQbApp getApplicationState() {
 		return (InventoryQbApp) getApplication();

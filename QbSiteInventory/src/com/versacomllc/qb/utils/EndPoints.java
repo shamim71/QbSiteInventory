@@ -1,5 +1,7 @@
 package com.versacomllc.qb.utils;
 
+import static com.versacomllc.qb.utils.Constants.SERVER_ROOT;
+
 import java.text.MessageFormat;
 
 /**
@@ -8,6 +10,8 @@ import java.text.MessageFormat;
  */
 public enum EndPoints {
 
+	REST_CALL_GET_CUSTOMER_SITE_ACCESS_LIST("/customersiteaccess/lat/{0}/lon/{1}/radius/{2}"),
+	
 	REST_CALL_POST_AUTHENTICATE("/authenticate"),
 	
 	REST_CALL_GET_INVENTORY_ADJUSTMENT("/qb/inventory/adjustment"),
@@ -31,7 +35,7 @@ public enum EndPoints {
 	}
 
 	public String getSimpleAddress() {
-		return "http://d1mnzch1.versacomllc.com:9080/quickbooks-gateway-server"
+		return SERVER_ROOT
 				+ address;
 	}
 
@@ -46,4 +50,6 @@ public enum EndPoints {
 	public String getAddress(Object... args) {
 		return MessageFormat.format(getSimpleAddress(), args);
 	}
+	
+	
 }

@@ -23,6 +23,7 @@
     <string name="error_dialog_title">An error has occurred</string>
     <string name="unknown">Unknown</string>
     <string name="retry">Retry</string>
+       <string name="ok">Ok</string>
     <string name="cancel">Cancel</string>
     <string name="processing">Processing&#8230;</string>
     <string name="barcode_label">Bar code: </string>
@@ -33,5 +34,6 @@
     <string name="email_hint">Please enter email address</string>
     <string name="password_hint">Please enter password</string>
     <string name="login_enter_authentication">Please enter email address/password</string>
-
+	<string name="delete_confirmation_title">Delete confirmation</string>
+	<string name="delete_confirmation_message">Want to remove this item?</string>
 </resources>

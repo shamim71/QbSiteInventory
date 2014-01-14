@@ -4,12 +4,16 @@ import static com.versacomllc.qb.utils.Constants.ACTION_FINISH;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.versacomllc.qb.R;
+import com.versacomllc.qb.service.LocationFinderService;
 import com.versacomllc.qb.utils.Constants;
 
 public class HomeActivity extends BaseActivity {
 
+	
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -18,9 +22,13 @@ public class HomeActivity extends BaseActivity {
 		sendBroadcast(new Intent(ACTION_FINISH));
 
 		registerActivityFinishSignal();
+		
+
 	}
 
+
 	public void launchCheckout(View v) {
+
 		Intent intent = new Intent(this, InventorySiteActivity.class);
 		intent.putExtra(Constants.EXTRA_TRANSACTION_TYPE, false);
 		startActivity(intent);
