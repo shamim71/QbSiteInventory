@@ -106,6 +106,7 @@ public class InventorySiteActivity extends BaseActivity implements OnItemSelecte
 				if(siteAccess != null){
 					Log.d(LOG_TAG, " log: "+ siteAccess.siteId);
 					adjustment.setCustomerSiteAccessId(siteAccess.getSiteId());
+					state.saveInventoryAdjustment(adjustment);
 				}
 			}
 
@@ -237,11 +238,15 @@ public class InventorySiteActivity extends BaseActivity implements OnItemSelecte
 		Log.d(LOG_TAG, site.getName());
 		
 		AuthenticationResponse authentication = getApplicationState().getAuthentication();
-		if(authentication != null){
-			adjustment.setUserId(authentication.getId());
+		if(authentication != null && authentication.getResult() != null){
+			adjustment.setUserId(authentication.getResult().getId());
 		}
 		adjustment.setInventorySiteRefListID(site.getListID());
 		adjustment.setInventorySiteRefName(site.getName());
+		adjustment.setAdjustmentType("IN");
+		if(!checkIn){
+			adjustment.setAdjustmentType("OUT");
+		}
 		
 		state.saveInventoryAdjustment(adjustment);
 	}

@@ -38,13 +38,14 @@ public class InventoryItemDetailsActivity extends Activity {
 	private CheckedInventoryItem currentItem = null;
 	private boolean add = true;
 
+	private String barCode;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_inventory_item_detail);
 		setTitle(getString(R.string.app_name));
 
-		String barCode = null;
+
 		Intent intent = getIntent();
 		if (intent != null) {
 			barCode = intent.getStringExtra(Constants.EXTRA_BARCODE);
@@ -86,6 +87,14 @@ public class InventoryItemDetailsActivity extends Activity {
 							currentItem = new CheckedInventoryItem(response, 1);
 							populateModel(currentItem);
 						}
+						else{
+							final String barCodeText = getString(R.string.barcode_label)
+									+" "+ barCode;
+							tvBarCode.setText(barCodeText);
+							
+							Toast.makeText(InventoryItemDetailsActivity.this, "Item not found with bar code: " + barCode, Toast.LENGTH_LONG)
+							.show();
+						}
 					}
 
 					@Override
@@ -112,7 +121,7 @@ public class InventoryItemDetailsActivity extends Activity {
 
 	private void populateModel(CheckedInventoryItem item) {
 		final String barCodeText = getString(R.string.barcode_label)
-				+" "+ item.getBarCodeValue();
+				+" "+ barCode;
 		final String itemNameText = getString(R.string.item_name_label)
 				+" "+ item.getName();
 		final String itemFullNameText = getString(R.string.item_fullname_label)
