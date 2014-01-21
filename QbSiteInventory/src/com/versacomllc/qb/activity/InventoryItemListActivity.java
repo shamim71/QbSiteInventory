@@ -233,6 +233,9 @@ public class InventoryItemListActivity extends BaseActivity {
 
 						InventoryQbApp.getCheckedItems().clear();
 						adapter.notifyDataSetChanged();
+						
+						backToHome();
+						
 					}
 
 					@Override
@@ -252,5 +255,14 @@ public class InventoryItemListActivity extends BaseActivity {
 	public boolean isCameraAvailable() {
 		PackageManager pm = getPackageManager();
 		return pm.hasSystemFeature(PackageManager.FEATURE_CAMERA);
+	}
+	
+	private void backToHome() {
+
+		Intent intent = new Intent(getBaseContext(),
+				HomeActivity.class);
+		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+				);
+		startActivity(intent);
 	}
 }

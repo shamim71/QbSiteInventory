@@ -121,7 +121,7 @@ public class InventoryItemDetailsActivity extends Activity {
 
 	private void populateModel(CheckedInventoryItem item) {
 		final String barCodeText = getString(R.string.barcode_label)
-				+" "+ barCode;
+				+" "+ item.getBarCodeValue();
 		final String itemNameText = getString(R.string.item_name_label)
 				+" "+ item.getName();
 		final String itemFullNameText = getString(R.string.item_fullname_label)

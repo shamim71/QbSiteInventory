@@ -4,10 +4,9 @@ import static com.versacomllc.qb.utils.Constants.ACTION_FINISH;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.versacomllc.qb.R;
-import com.versacomllc.qb.service.LocationFinderService;
+import com.versacomllc.qb.model.ItemInventory;
 import com.versacomllc.qb.utils.Constants;
 
 public class HomeActivity extends BaseActivity {
@@ -45,6 +44,10 @@ public class HomeActivity extends BaseActivity {
 	
 
 		getApplicationState().saveAuthentication(null);
+		
+		getApplicationState().saveInventoryItems(new ItemInventory[0]);
+		
+		//getApplicationState().saveInventorySites(new InventorySite[0]);
 		
 		sendBroadcast(new Intent(ACTION_FINISH));
 		
