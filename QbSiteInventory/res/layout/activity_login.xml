@@ -3,8 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <ImageView  style="@style/DefaultComponentMargin"
+    <ImageView
         android:id="@+id/iv_Logo"
+        style="@style/DefaultComponentMargin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -13,11 +14,20 @@
         android:contentDescription="@string/app_name"
         android:src="@drawable/versacom_logo" />
 
+    <TextView
+        android:id="@+id/tv_appName"
+        style="@style/HugeWhiteBoldText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_Logo"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:text="@string/app_title" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginTop="10dp"
         android:gravity="left"
         android:orientation="vertical" >
 
@@ -39,10 +49,10 @@
 
         <Button
             android:id="@+id/btn_login"
-            android:onClick="authenticateUser"
             style="@style/DefaultComponentMargin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="authenticateUser"
             android:text="@string/button_login" />
     </LinearLayout>
 

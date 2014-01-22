@@ -55,7 +55,7 @@
     </style>
 
     <style name="HugeWhiteBoldText" parent="WhiteBoldText">
-        <item name="android:textSize">@dimen/title_text</item>
+        <item name="android:textSize">@dimen/extra_huge_text</item>
     </style>
 
     <style name="SmallWhiteBoldText" parent="WhiteBoldText">

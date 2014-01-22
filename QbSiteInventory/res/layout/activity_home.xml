@@ -5,6 +5,16 @@
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    
+    <ImageView
+        android:id="@+id/iv_home_logo"
+        style="@style/DefaultComponentMargin"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginBottom="25dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/home_icon_1" />
+        
     <Button
         android:id="@+id/btn_checkOut" style="@style/DefaultComponentMargin"
         android:layout_height="wrap_content"

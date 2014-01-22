@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">Versacom Inventory</string>
+    <string name="app_title">Versacom Mobile Inventory</string>
     <string name="activity_title_inventory_site">Inventory site</string>
     <string name="activity_title_select_inventory_item">Inventory item</string>
     <string name="scan">Scan</string>
